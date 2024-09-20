@@ -10,7 +10,6 @@ spec:
     repoURL: https://github.com/alt-aatish/deploy-test.git
     targetRevision: HEAD
     path: frontend
-    kustomize:
 
   destination: 
     server: https://kubernetes.default.svc
