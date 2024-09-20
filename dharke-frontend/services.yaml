@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: dharke-frontend-service
+spec:
+  selector:
+    app: dharke-frontend
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: 8080

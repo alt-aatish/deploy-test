@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dharke-frontend
+spec:
+  selector:
+    matchLabels:
+      app: dharke-frontend
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: dharke-frontend
+    spec:
+      containers:
+      - name: dharke-frontend
+        image: aatishsthaa/dharke-frontend:latest
+        ports:
+        - containerPort: 8080
