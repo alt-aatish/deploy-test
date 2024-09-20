@@ -16,4 +16,4 @@ spec:
       - name: dharke-frontend
         image: aatishsthaa/dharke-frontend:latest
         ports:
-        - containerPort: 8080
+        - containerPort: 80

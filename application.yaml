@@ -7,7 +7,7 @@ spec:
   project: default
 
   source:
-    repoURL: https://github.com/waterlulu12/deploy-test.git
+    repoURL: https://github.com/alt-aatish/deploy-test.git
     targetRevision: HEAD
     path: dharke-frontend
 
