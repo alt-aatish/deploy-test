@@ -3,19 +3,16 @@ kind: Deployment
 metadata:
   name: dharke-frontend
   namespace: frontend
-  labels:
-    name: dharke-frontend
-    version: v1.0
 spec:
   replicas: 2
   selector:
     matchLabels:
-      name: dharke-frontend
+      app: dharke-frontend
       version: v1.0
   template:
     metadata:
       labels:
-        name: dharke-frontend
+        app: dharke-frontend
         version: v1.0
     spec:
       containers:
@@ -24,4 +21,3 @@ spec:
         ports:
         - name: http
           containerPort: 80
-          protocol: TCP
