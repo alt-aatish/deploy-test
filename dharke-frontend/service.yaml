@@ -7,5 +7,5 @@ spec:
     app: dharke-frontend
   ports:
   - protocol: TCP
-    port: 80
+    port: 9001
     targetPort: 80

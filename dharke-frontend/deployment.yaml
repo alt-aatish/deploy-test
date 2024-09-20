@@ -2,18 +2,26 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: dharke-frontend
+  namespace: frontend
+  labels:
+    name: frontend-solid
+    version: v1.0
 spec:
+  replicas: 2
   selector:
     matchLabels:
-      app: dharke-frontend
-  replicas: 2
+      name: dharke-frontend-solid
+      version: v1.0
   template:
     metadata:
       labels:
-        app: dharke-frontend
+        name: dharke-frontend-solid
+        version: v1.0
     spec:
       containers:
       - name: dharke-frontend
         image: aatishsthaa/dharke-frontend:latest
         ports:
-        - containerPort: 80
+        - name: http
+          containerPort: 80
+          protocol: TCP

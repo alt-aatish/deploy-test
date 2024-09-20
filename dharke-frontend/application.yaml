@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: dharke-frontend-argo-application
+  name: frontend
   namespace: argocd
 spec:
   project: default
@@ -9,16 +9,16 @@ spec:
   source:
     repoURL: https://github.com/alt-aatish/deploy-test.git
     targetRevision: HEAD
-    path: dharke-frontend
+    path: frontend
+    kustomize:
 
   destination: 
     server: https://kubernetes.default.svc
-    namespace: dharke-frontend
+    namespace: frontend
 
   syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
     syncOptions:
     - CreateNamespace=true
-
-    automated:
-      selfHeal: true
-      prune: true
